@@ -30,6 +30,8 @@ body {
 .promo {
 	color: #ffffff;
 	background-color: #363636;
+	background: url("../img/header-background.png") no-repeat center;
+	/*background-size: cover; уточнить, когда буду строить сетку*/
 }
 
 .promo span {
@@ -144,6 +146,11 @@ input[type="text"]::placeholder {
 	color: #7eb152;
 }
 
+.popularity {
+	background: url(../img/popularity-background.png) no-repeat;
+	padding-left: 900px; /* Уточнить, когда буду строить сетку */
+}
+
 .popularity h2 + p {
 	font-size: 14px;
 	line-height: 20px;
@@ -159,6 +166,11 @@ input[type="text"]::placeholder {
 
 .popularity p + a {
 	font-weight: 600;
+}
+
+.story {
+	background: url(../img/story-background.png) no-repeat 100% 0;
+	padding-right: 800px; /* Уточнить, когда буду строить сетку */
 }
 
 .quotation p {
@@ -185,6 +197,21 @@ input[type="text"]::placeholder {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+}
+
+.product-list .herbs {
+	background: url(../img/product-item-herbs.png) no-repeat;
+	padding-top: 90px; /* Уточнить, когда буду строить сетку + добавить 2й фон */
+}
+
+.product-list .instruction {
+	background: url(../img/product-item-instruction.png) no-repeat;
+	padding-top: 90px; /* Уточнить, когда буду строить сетку + добавить 2й фон */
+}
+
+.product-list .certificate {
+	background: url(../img/product-item-certificate.png) no-repeat;
+	padding-top: 90px; /* Уточнить, когда буду строить сетку + добавить 2й фон */
 }
 
 .ingredients-notes li {
@@ -240,12 +267,22 @@ input[type="text"]::placeholder {
 	color: #7eb152;
 }
 
+.recipe {
+	background: url(../img/recipe-background.png) no-repeat;
+	padding-left: 800px; /* Уточнить, когда буду строить сетку */
+}
+
 .recipe b {
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+}
+
+.guarantee {
+	background: url(../img/guarantee-background.png) no-repeat 80% 0;
+	padding-right: 700px; /* Уточнить, когда буду строить сетку */
 }
 
 .guarantee h2 + p {
