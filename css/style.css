@@ -3,6 +3,7 @@
 	src: url(../fonts/Montserrat-Regular.ttf) format("opentype");
 }
 body {
+	min-width: 1740px; /*позже поэскпериментировать, нужны ли отступы по 10px*/ 
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
@@ -12,11 +13,46 @@ body {
 	background-color: #ffffff;
 }
 
+.container {
+	width: 1720px;
+	margin: 0 auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header {
+	position: relative;
+	min-height: 809px;
+}
+
+.header-top {
+	margin-top: 37px;
+	margin-bottom: 35px;
+}
+
+.header-top .header-logo {
+	float: left;
+	margin-left: 275px;
+	
+	width: 200px;
+	height: 29px;
+}
+
 .header-top .delivery {
+	float: left;
+	margin-left: 27px;
+	width: 211px;
 	color: #9a9a9a;
 }
 
 .header-top .phone {
+	float: right;
+	margin-right: 275px;
+	width: 200px;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -28,10 +64,23 @@ body {
 }
 
 .promo {
+	position: relative;
+	min-height: 544px;
 	color: #ffffff;
 	background-color: #363636;
 	background: url("../img/header-background.png") no-repeat center;
-	/*background-size: cover; уточнить, когда буду строить сетку*/
+/*	background-size: cover; уточнить, когда построю сетку полностью*/
+}
+
+.promo img {
+	position: absolute;
+	top: 94px;
+	left: 406px;
+}
+
+.promo .text {
+	margin-left: 875px;
+	padding-top: 170px;	
 }
 
 .promo span {
@@ -44,10 +93,33 @@ body {
 .promo h1 {
 	font-size: 60px;
 	font-weight: 600;
+	margin-left: -4px;
+	margin-top: 28px;
+	margin-bottom: 56px;
 }
 
 .promo p {
 	font-size: 18px;
+	white-space: pre-line;
+}
+
+.offer-header form {
+	position: absolute;
+	top: 550px;
+	margin-left: 875px;
+	width: 573px;
+	background-color: white;
+}
+
+.offer-header form div {
+	position: relative;
+	box-sizing: border-box;
+	margin: 20px;
+	padding-left: 50px;
+	padding-top: 46px;
+	width: 530px;
+	height: 276px;
+	border: 1px solid #a8c48c;
 }
 
 .offer form label {
@@ -56,9 +128,14 @@ body {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	white-space: pre-line;
 }
 
 .offer input[type="text"] {
+	margin-right: 20px;
+	padding-top: 40px;
+	padding-right: 10px;
+	padding-bottom: 10px;
 	font-size: 14px;
 	font-family: "Montserrat", sans-serif;
 	border: none;
@@ -88,12 +165,23 @@ input[type="text"]::placeholder {
 	text-decoration: none;
 }
 
-.feature-item h3 span {
-	font-size: 30px;
-  	color: #a4c58c;
-  	font-weight: 600;
-  	border-bottom: 3px solid #a4c58c; /* добавил border снизу и padding, т.к. при text-decoration: underline расстояние линии подчеркивания от текста никак не изменить */
-  	padding-bottom: 3px;
+.offer-header .btn {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 20px 95px;
+	background-color: #a8c48c;
+	color: #ffffff;
+	border-style: none;
+}
+
+.features {
+	padding-top: 107px;
+}
+
+.features ul {
+	margin: 0;
+	padding: 0;
 }
 
 .features li {
@@ -101,7 +189,39 @@ input[type="text"]::placeholder {
 }
 
 .features li p {
+	margin-top: 29px;
 	color: #000000;
+}
+
+.feature-item {
+	float: left;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 30px;
+	width: 230px;
+	background: url(../img/feature-item-marker.png) no-repeat;
+}
+
+.feature-item:first-child {
+	margin-left: 305px;
+}
+
+.feature-item h3 {
+	display: inline;
+	margin: 0;
+	font-size: 30px;
+  	color: #a4c58c;
+  	font-weight: 600;
+  	border-bottom: 3px solid #a4c58c; /* добавил border снизу и padding, т.к. при text-decoration: underline расстояние линии подчеркивания от текста никак не изменить */
+  	padding-bottom: 3px;
+}
+
+.feature-item span {
+	font-size: 20px;
+}
+
+.feature-item p {
+	white-space: pre-line;
 }
 
 .section-title {
@@ -110,9 +230,44 @@ input[type="text"]::placeholder {
 	font-weight: bold;
 }
 
+.symptoms {
+	padding-top: 184px;
+}
+
+.symptoms .container {
+	position: relative;
+}
+
+.symptoms img {
+	float: right;
+	width: 500px;
+	padding-right: 275px;
+}
+
+.symptoms h2 {
+	margin: 0;
+	padding-top: 44px;
+	padding-left: 275px;
+	padding-bottom: 43px;
+	white-space: pre-line;
+}
+
+.symptoms ul {
+	margin: 0;
+	margin-bottom: 90px;
+	padding-left: 275px;
+	background-color: #f6f9f3;
+	padding-bottom: 30px;
+}
+
 .symptoms-list li {
+	padding-top: 24px;
+	padding-bottom: 24px;
+	width: 650px;
+	border-bottom: 1px solid #e6efde;
 	list-style: none;
 	line-height: 20px;
+	white-space: pre-line;
 }
 
 .symptoms-list li:nth-child(1),
@@ -125,9 +280,37 @@ input[type="text"]::placeholder {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
+.symptoms-list li:nth-child(6),
+.symptoms-list li:nth-child(8) {
+	float: left;
+	width: 350px;
+}
+
+.symptoms-list li:nth-child(7),
+.symptoms-list li:nth-child(9) {
+	float: left;
+	width: 264px;
+	padding-left: 35px;
+	border-left: 1px solid #e6efde;
+}
+
+.symptoms-list li:nth-child(6),
+.symptoms-list li:nth-child(7) {
+	padding-top: 23px;
+	padding-bottom: 22px;
+}
 
 .symptom-item span {
 	color: #a4c58c;
+	padding-right: 20px;
+}
+
+.symptoms-list li:nth-child(1) span{
+	padding-right: 23px;
+}
+
+.symptoms-list li:nth-child(4) span{
+	padding-right: 18px;
 }
 
 .symptoms-list li:nth-child(6) span,
@@ -140,15 +323,61 @@ input[type="text"]::placeholder {
 	letter-spacing: 0.05em;
 }
 
-.symptoms p + a {
+.symptoms .note + a {
+	position: absolute;
+	top: 675px;
+	left: 1007px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 14px;
 	font-weight: 600;
 	color: #7eb152;
+	background-color: #f6f9f3;
 }
 
-.popularity {
+.symptoms .note {
+	display: inline-block;
+	position: absolute;
+	top: 529px;
+	left: 945px; 
+	background-color: #f6f9f3; 
+}
+
+.symptoms p {
+	margin: 20px;
+	padding: 33px 30px 34px 50px;
+	border: 1px solid #c5dab5;
+	white-space: pre-line;
+}
+
+.symptoms .btn {
+	box-sizing: border-box;
+	position: absolute;
+	right: 275px;
+	bottom: 0px;
+	width: 500px;
+	height: 70px;
+	padding: 28px 154px 27px 124px;
+	background-color: #a8c48c;
+	color: #ffffff;
+}
+
+.popularity .container {
+	position: relative;
+	margin-top: 170px;
 	background: url(../img/popularity-background.png) no-repeat;
-	padding-left: 900px; /* Уточнить, когда буду строить сетку */
+	min-height: 645px;
+}
+
+.popularity .content {
+	padding-left: 945px; 
+}
+
+.popularity h2 {
+	margin: 0;
+	padding-top: 45px;
+	padding-bottom: 47px;
+	white-space: pre-line;
 }
 
 .popularity h2 + p {
@@ -159,21 +388,145 @@ input[type="text"]::placeholder {
 	letter-spacing: 0.05em;
 }
 
-.popularity-list li {
-	list-style: none;
-	line-height: 22px;
+.popularity p {
+	margin: 0;
+	margin-bottom: 62px;
 }
 
-.popularity p + a {
+.popularity ul {
+	margin: 0;
+	padding: 0;
+}
+
+.popularity-list li {
+	margin-bottom: 50px;
+	padding-left: 44px;
+	list-style: none;
+	line-height: 22px;
+	white-space: pre-line;
+	background: url(../img/popularity-marker.png) no-repeat 0 50%;
+}
+
+.popularity .note + a {
 	font-weight: 600;
 }
 
-.story {
+.popularity .note {
+	display: inline-block;
+	position: absolute;
+	top: 480px;
+	left: 277px; 
+	max-width: 600px;
+	background-color: #ffffff; 
+}
+
+.popularity .note p {
+	margin: 20px;
+	padding: 37px 70px 37px 40px;
+	border: 1px solid #c5dab5;
+	white-space: pre-line;
+}
+
+.popularity .btn {
+	box-sizing: border-box;
+	position: absolute;
+	left: 297px;
+	top: 645px;
+	width: 559.3px;
+	height: 70px;
+	padding: 28px 90px 28px 40px;
+	background-color: #a8c48c;
+	color: #ffffff;
+}
+
+.story .container {
 	background: url(../img/story-background.png) no-repeat 100% 0;
-	padding-right: 800px; /* Уточнить, когда буду строить сетку */
+	min-height: 920px;
+	margin-top: 271px;
+}
+
+.story .content {
+	padding-right: 745px;
+}
+
+.story h2 {
+	margin: 0;
+	padding-top: 94px;
+	padding-bottom: 44px;
+	padding-left: 275px;
+}
+
+.story p {
+	margin: 0;
+	padding-top: 19px;
+	padding-left: 275px;
+	padding-right: 30px;
+	background: #f6f9f3;
+}
+
+.story p:nth-child(2)
+ {
+	padding-top: 50px;
+}
+
+.story p:nth-child(4) {
+	padding-bottom: 45px;
+}
+
+.story .offer {
+	margin-top: 40px;
+	margin-left: 504px;
+	margin-right: 845px;
+	width: 369px;
+}
+
+.story label {
+	white-space: pre-line;
+}
+
+.story input[type="text"] {
+	box-sizing: border-box;
+	margin: 0;
+	margin-top: 23px;
+	margin-bottom: 29px;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 369px;
+}
+
+.story .btn {
+	box-sizing: border-box;
+	width: 369px;
+	height: 60px;
+	padding: 23px 127px 22px 95px;
+	background-color: #a8c48c;
+	color: #ffffff;
+	border-style: none;
+}
+
+.quotation {
+	padding-top: 200px;
+	background-image: url(../img/quotation-background-1.png), url(../img/quotation-background-2.png);
+	background-repeat: no-repeat;
+	background-position: 0 0, 100% 0;
+	min-height: 619px;
+}
+
+.quotation blockquote {
+	margin: 0 auto;
+	padding-top: 25px;
+	padding-bottom: 50px;
+	width: 770px;
+	text-align: center;
+	white-space: pre-line;
+	border-top: 3px solid #a4c58c;
+	border-bottom: 3px solid #a4c58c;
 }
 
 .quotation p {
+	margin: 0;
+	padding-bottom: 10px;
 	font-size: 24px;
 	line-height: 40px;
 	font-weight: bold;
@@ -190,69 +543,365 @@ input[type="text"]::placeholder {
 	color: #9a9a9a;
 }
 
+.product .container {
+	margin-top: -105px;
+}
+
+.product h2 {
+	margin: 0;
+	margin-left: 275px;
+	white-space: pre-line;
+}
+
+.product-background {
+	margin-top: 100px;
+	padding-bottom: 100px;
+	background-color: #f6f9f3;
+}
+
+.product-list-outline {
+	background-color: #ffffff;
+	margin-left: 352px;
+	margin-right: 352px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+
+.product ol {
+	margin: 0;
+	padding: 0;
+}
+
 .product-list li {
+	box-sizing: border-box;
+	margin-top: -50px;
+	margin-right: 20px;
+	padding-top: 240px;
+	width: 312px;
+	height: 312px;
+	border: 1px solid #e4eddc;
+	background-color: #ffffff;
+	background-position: 50% 50%;
 	list-style: none;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	text-align: center;
 }
 
 .product-list .herbs {
-	background: url(../img/product-item-herbs.png) no-repeat;
-	padding-top: 90px; /* Уточнить, когда буду строить сетку + добавить 2й фон */
+	float: left;
+	background-image: url(../img/product-item-herbs.png), url(../img/product-item-01.png);
+	background-repeat: no-repeat;
 }
 
 .product-list .instruction {
-	background: url(../img/product-item-instruction.png) no-repeat;
-	padding-top: 90px; /* Уточнить, когда буду строить сетку + добавить 2й фон */
+	float: left;
+	background-image: url(../img/product-item-instruction.png), url(../img/product-item-02.png);
+	background-repeat: no-repeat;
 }
 
 .product-list .certificate {
-	background: url(../img/product-item-certificate.png) no-repeat;
-	padding-top: 90px; /* Уточнить, когда буду строить сетку + добавить 2й фон */
+	float: left;
+	background-image: url(../img/product-item-certificate.png), url(../img/product-item-03.png);
+	background-repeat: no-repeat;
+	margin-right: 0;
+}
+
+.ingredients .container {
+	padding-top: 195px;
+}
+
+.ingredients .content {
+	float: right;
+	width: 540px;
+	min-height: 255px;
+	padding-right: 260px;
+	padding-bottom: 45px;
+	padding-left: 60px;
+}
+
+.ingredients h2 {
+	margin: 0;
+	margin-top: -40px;
+	white-space: pre-line;
+}
+
+.ingredients ul {
+	margin: 0;
+	padding: 0;
 }
 
 .ingredients-notes li {
+	margin-top: 50px;
+	padding-left: 20px;
+	background: url(../img/ingredients-marker.png) no-repeat 0 7px;
 	list-style: none;
 	line-height: 22px;
+	white-space: pre-line;
+}
+
+.ingredients-notes li:nth-child(2) {
+	margin-top: 35px;
+}
+
+.ingredients .ingredients-list {
+	margin-left: 260px;
 }
 
 .ingredients-list li {
+	display: -webkit-flex;
+	display: -ms-flexbox-flex;
+	display: flex;
+  	-webkit-justify-content: center;
+  	justify-content: center;
+  	-webkit-align-items: center;
+  	align-items: center;
+	position: relative;
+	margin: 15px;
+	width: 270px;
+	height: 270px;
 	list-style: none;
 	font-size: 14px;
 	letter-spacing: 0.03em;
 	color: #a4c58c;
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg); 
+	-o-transform: rotate(-90deg); 
+	-ms-transform: rotate(-90deg); 
+	transform: rotate(-90deg);
+}
+
+.ingredients-list li .cover {
+	display: none;
+  	justify-content: center;
+  	align-items: center;
+	width: 230px;
+	height: 230px;
+	background-image: url(../img/ingredient-item-cover.png);
+	background-repeat: no-repeat;
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg); 
+	-o-transform: rotate(90deg); 
+	-ms-transform: rotate(90deg); 
+	transform: rotate(90deg);
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	text-align: center;
+	white-space: pre-line;
+}
+
+.ingredients-list li .active {
+	display: flex;
+}
+
+.ingredients-list li:nth-child(1) {
+	float: left;
+	background: url(../img/ingredient-item-01.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(2) {
+	float: left; 
+	background: url(../img/ingredient-item-02.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(3) {
+	float: left;
+	background: url(../img/ingredient-item-03.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(4) {
+	float: left;
+	background: url(../img/ingredient-item-04.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(5) {
+	float: left;
+	background: url(../img/ingredient-item-05.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(6) {
+	float: left;
+	background: url(../img/ingredient-item-06.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(7) {
+	float: left;
+	background: url(../img/ingredient-item-07.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(8) {
+	float: left;
+	background: url(../img/ingredient-item-08.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(9) {
+	float: left;
+	background: url(../img/ingredient-item-09.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(10) {
+	float: left;
+	background: url(../img/ingredient-item-10.png) no-repeat;
+}
+
+.ingredients-list li:nth-child(12) {
+	float: left;
+	background: url(../img/ingredient-item-11.png) no-repeat;
 }
 
 .ingredients-list span {
-	font-weight: bold;
+	position: absolute;
 }
 
-.ingredients-list li + p {
+.ingredients-list .number {
+	font-weight: bold;
+	top: 10px;
+	right: 17px;
+}
+
+.ingredients-list span + span {
+	left: 15px;
+	bottom: 8px;
+}
+
+.ingredients-list span + p {
+	margin: 0;
+	padding-top: 80px;
+	padding-right: 115px;
+	padding-bottom: 10px;
+	padding-left: 50px;
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	color: #000000;
+	white-space: pre-line;
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg); 
+	-o-transform: rotate(90deg); 
+	-ms-transform: rotate(90deg); 
+	transform: rotate(90deg);
 }
 
-.reviews ul li {
+.ingredients .note {
+	position: relative;
+	float: left;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 30px 30px 15px 30px;
+	width: 840px;
+	height: 255px;
+	background-color: #ffffff; 
+	border: 1px solid #c5dab5;
+}
+
+.ingredients p {
+	margin: 0;
+	padding-left: 80px;
+	padding-top: 15px;
+	padding-right: 80px;
+	white-space: pre-line;
+}
+
+.ingredients p:first-child {
+	padding-top: 60px;
+}
+
+.ingredients .btn {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	padding: 23px 100px 22px 55px;
+	width: 350px;
+	height: 60px;
+	background-color: #a8c48c;
+	color: #ffffff;
+}
+
+.reviews .container {
+	margin-top: 175px;
+}
+
+.reviews h2 {
+	margin: 0;
+	margin-bottom: 40px;
+	margin-left: 270px;
+	white-space: pre-line;
+}
+
+.reviews .nav-tabs {
+	margin: 0;
+	padding: 0;
+}
+
+.reviews .nav-tabs li {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 420px;
+	padding: 29px 70px 27px 70px;
+}
+
+.reviews .nav-tabs li:first-child {
+	margin-left: 275px;
+}
+
+.reviews .nav-tabs .active {
+	background-color: #f6f9f3;
+}
+
+.reviews .nav-tabs .active a {
+	color: #7eb152;
+}
+
+.reviews .nav-tabs a {
 	list-style: none;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	text-decoration: none;
 	color: #c3c3c3;
 }
 
-.reviews ul .active {
-	color: #7eb152;
+.reviews .tab-content .reviews-list {
+	padding-left: 345px;
+	background-color: #f6f9f3;
+}
+
+.reviews .tab-content .reviews-list {
+	display: none;
+}
+
+.reviews .tab-content .active {
+	display: block;
+}
+
+.reviews-list blockquote {
+	margin: 0;
+}
+
+.reviews-list .review-item {
+	float: left;
+	margin-top: 55px;
+	margin-right: 105px;
+	padding-top: 20px;
+	width: 500px;
+	height: 170px;
+	background: url(../img/reviews-marker.png) no-repeat;
 }
 
 .review-item p {
+	margin: 0;
+	margin-bottom: 10px;
 	color: #c3c3c3;
 }
 
@@ -261,18 +910,70 @@ input[type="text"]::placeholder {
 	font-weight: 600;
 }
 
-.reviews-list + a {
+.reviews .tab-content + .links {
+	margin-top: 45px;
+	margin-left: 700px;	
+}
+
+.reviews .links a:first-child {
+	margin-right: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
 	font-size: 14px;
 	font-weight: bold;
 	color: #7eb152;
 }
 
-.recipe {
+.reviews .btn {
+	box-sizing: border-box;
+	padding: 27px 72px 26px 24px;
+	width: 570px;
+	height: 70px;
+	background-color: #a8c48c;
+	color: #ffffff;
+}
+
+.recipe .container {
+	margin-top: 226px;
 	background: url(../img/recipe-background.png) no-repeat;
-	padding-left: 800px; /* Уточнить, когда буду строить сетку */
+	min-height: 775px;
+}
+
+.recipe .content-border {
+	margin-left: 765px;
+	padding: 20px;
+	-ms-transform: translateY(60px);
+	-moz-transform: translateY(60px);
+	-webkit-transform: translateY(60px);
+	-o-transform: translateY(60px);
+	transform: translateY(60px);
+	background-color: #ffffff;
+}
+
+.recipe .content {
+	box-sizing: border-box;
+	padding-left: 70px;
+	padding-top: 65px;
+	padding-right: 50px;
+	width: 640px;
+	height: 625px;
+	border: 1px solid #c8dcba;
+}
+
+.recipe h2 {
+	margin: 0;
+	margin-bottom: 55px;
+}
+
+.recipe p {
+	margin: 0;
+	margin-top: 20px;
 }
 
 .recipe b {
+	display: inline-block;
+	margin-top: 35px;
+	margin-bottom: 60px;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: bold;
@@ -280,28 +981,120 @@ input[type="text"]::placeholder {
 	letter-spacing: 0.05em;
 }
 
-.guarantee {
-	background: url(../img/guarantee-background.png) no-repeat 80% 0;
-	padding-right: 700px; /* Уточнить, когда буду строить сетку */
+.recipe .btn {
+	box-sizing: border-box;
+	padding: 28px 79px 26px 34px;
+	width: 500px;
+	height: 70px;
+	background-color: #a8c48c;
+	color: #ffffff;
+} 
+
+footer .container {
+	margin-top: 200px;
 }
 
-.guarantee h2 + p {
+.guarantee img {
+	float: right;
+	width: 416px;
+	padding-right: 305px;
+}
+
+.guarantee h2 {
+	margin: 0;
+	padding-top: 95px;
+	padding-bottom: 40px;
+	padding-left: 275px;
+}
+
+.guarantee .content-background {
+	padding-left: 345px;
+	background-color: #f6f9f3;
+}
+
+.guarantee .content-background p {
+	margin: 0;
+}
+
+.guarantee .content-background p:first-child {
+	padding-top: 35px;
+	padding-bottom: 37px;
+	padding-right: 860px;
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
 
-.guarantee p + b {
+.guarantee .note-border {
+	position: relative;
+	display: inline-block;
+	background-color: #ffffff;
+	padding: 20px;
+	margin-bottom: 100px;
+}
+
+.guarantee .note {
+	box-sizing: border-box;
+	padding: 45px 50px 110px 50px;
+	width: 530px;
+	height: 275px;
+	border: 1px solid #c8dcba;
+	background-color: #ffffff;
+}
+
+.guarantee .note b {
+	position: absolute;
+	top: 15px;
+	left: 60px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 14px;
+	line-height: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	color: #7eb152;
+	background-color: #ffffff;
+}
+
+.guarantee .note p {
+	padding-bottom: 15px;
+}
+
+.guarantee .note .btn {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	box-sizing: border-box;
+	padding: 23px 104px 22px 62px;
+	width: 350px;
+	height: 60px;
+	background-color: #a8c48c;
+	color: #ffffff;
+}
+
+.footer-bottom {
+	margin-top: 35px;
+	margin-bottom: 30px;
+}
+
+.footer-bottom .footer-logo {
+	float: left;
+	margin-right: 85px;
+	margin-left: 275px;
+	width: 198px;
+	height: 29px;
 }
 
 .footer-menu li {
+	float: left;
+	margin-right: 50px;
 	list-style: none;
+}
+
+.footer-menu li:first-child {
+	margin-right: 55px;
 }
 
 .footer-menu a {
@@ -310,6 +1103,9 @@ input[type="text"]::placeholder {
 }
 
 .footer-bottom .phone {
+	float: right;
+	margin-right: 275px;
+	width: 200px;
 	font-size: 20px;
 	font-weight: bold;
 }
