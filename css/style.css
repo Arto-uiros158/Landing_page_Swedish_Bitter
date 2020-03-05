@@ -3,7 +3,7 @@
 	src: url(../fonts/Montserrat-Regular.ttf) format("opentype");
 }
 body {
-	min-width: 1740px; /*позже поэскпериментировать, нужны ли отступы по 10px*/ 
+	min-width: 1740px;
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
@@ -37,7 +37,6 @@ header {
 .header-top .header-logo {
 	float: left;
 	margin-left: 275px;
-	
 	width: 200px;
 	height: 29px;
 }
@@ -45,22 +44,37 @@ header {
 .header-top .delivery {
 	float: left;
 	margin-left: 27px;
+	padding-top: 5px;
 	width: 211px;
 	color: #9a9a9a;
 }
 
 .header-top .phone {
+	position: relative;
 	float: right;
 	margin-right: 275px;
 	width: 200px;
 	font-size: 20px;
+	line-height: 20px;
 	font-weight: bold;
+	text-align: right;
+}
+
+.header-top .phone-image {
+	position: absolute;
+	display: inline-block;
+	top: 2px;
+	left: 5px;
+	width: 16px;
+	height: 16px;
+	background: url(../img/phone.png) no-repeat;
 }
 
 .header-top .call {
 	font-size: 12px;
 	color: #9a9a9a;
 	font-weight: normal;
+
 }
 
 .promo {
@@ -69,7 +83,6 @@ header {
 	color: #ffffff;
 	background-color: #363636;
 	background: url("../img/header-background.png") no-repeat center;
-/*	background-size: cover; уточнить, когда построю сетку полностью*/
 }
 
 .promo img {
@@ -169,10 +182,25 @@ input[type="text"]::placeholder {
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
-	padding: 20px 95px;
+	padding: 21px 110px 19px 80px;
 	background-color: #a8c48c;
 	color: #ffffff;
 	border-style: none;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 160px 27px;
+}
+
+.btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 175px 27px;
+}
+
+.btn:active,
+.btn:focus {
+	outline: 3px solid rgba(94, 158, 214, 0.8);
 }
 
 .features {
@@ -255,12 +283,13 @@ input[type="text"]::placeholder {
 .symptoms ul {
 	margin: 0;
 	margin-bottom: 90px;
-	padding-left: 275px;
+	padding-left: 255px;
 	background-color: #f6f9f3;
 	padding-bottom: 30px;
 }
 
 .symptoms-list li {
+	padding-left: 20px;
 	padding-top: 24px;
 	padding-bottom: 24px;
 	width: 650px;
@@ -268,6 +297,19 @@ input[type="text"]::placeholder {
 	list-style: none;
 	line-height: 20px;
 	white-space: pre-line;
+	-webkit-transition-property: background-color;
+	-o-transition-property: background-color;
+	-moz-transition-property: background-color;
+	transition-property: background-color;
+	-webkit-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+.symptoms-list li:hover {
+	background-color: #e5eedc; 
+	/*background-image: url(../img/symptoms-cover.png);*/
 }
 
 .symptoms-list li:nth-child(1),
@@ -305,11 +347,11 @@ input[type="text"]::placeholder {
 	padding-right: 20px;
 }
 
-.symptoms-list li:nth-child(1) span{
+.symptoms-list li:nth-child(1) span {
 	padding-right: 23px;
 }
 
-.symptoms-list li:nth-child(4) span{
+.symptoms-list li:nth-child(4) span {
 	padding-right: 18px;
 }
 
@@ -333,6 +375,15 @@ input[type="text"]::placeholder {
 	font-weight: 600;
 	color: #7eb152;
 	background-color: #f6f9f3;
+}
+
+.symptoms .note + a:hover {
+	color: rgba(182, 211, 157, 0.8);
+	text-decoration: none;
+}
+
+.symptoms .note + a:active {
+	text-decoration: underline;
 }
 
 .symptoms .note {
@@ -360,6 +411,16 @@ input[type="text"]::placeholder {
 	padding: 28px 154px 27px 124px;
 	background-color: #a8c48c;
 	color: #ffffff;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 375px 34px;
+}
+
+.symptoms .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 395px 34px;
 }
 
 .popularity .container {
@@ -437,6 +498,16 @@ input[type="text"]::placeholder {
 	padding: 28px 90px 28px 40px;
 	background-color: #a8c48c;
 	color: #ffffff;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 480px 34px;
+}
+
+.popularity .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 495px 34px;
 }
 
 .story .container {
@@ -503,6 +574,16 @@ input[type="text"]::placeholder {
 	background-color: #a8c48c;
 	color: #ffffff;
 	border-style: none;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 260px 28px;
+}
+
+.story .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 275px 28px;
 }
 
 .quotation {
@@ -677,7 +758,9 @@ input[type="text"]::placeholder {
 
 .ingredients-list li .cover {
 	display: none;
+	-webkit-justify-content: center;
   	justify-content: center;
+  	-webkit-align-items: center;
   	align-items: center;
 	width: 230px;
 	height: 230px;
@@ -697,6 +780,8 @@ input[type="text"]::placeholder {
 }
 
 .ingredients-list li .active {
+	display: -webkit-flex;
+	display: -ms-flexbox-flex;
 	display: flex;
 }
 
@@ -771,6 +856,7 @@ input[type="text"]::placeholder {
 }
 
 .ingredients-list span + p {
+	position: absolute;
 	margin: 0;
 	padding-top: 80px;
 	padding-right: 115px;
@@ -824,6 +910,16 @@ input[type="text"]::placeholder {
 	height: 60px;
 	background-color: #a8c48c;
 	color: #ffffff;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 255px 29px;
+}
+
+.ingredients .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 270px 29px;
 }
 
 .reviews .container {
@@ -924,6 +1020,15 @@ input[type="text"]::placeholder {
 	color: #7eb152;
 }
 
+.reviews .links a:first-child:hover {
+	color: rgba(182, 211, 157, 0.8);
+	text-decoration: none;
+}
+
+.reviews .links a:first-child:active {
+	text-decoration: underline;
+}
+
 .reviews .btn {
 	box-sizing: border-box;
 	padding: 27px 72px 26px 24px;
@@ -931,6 +1036,16 @@ input[type="text"]::placeholder {
 	height: 70px;
 	background-color: #a8c48c;
 	color: #ffffff;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 500px 32px;
+}
+
+.reviews .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 510px 32px;
 }
 
 .recipe .container {
@@ -988,7 +1103,17 @@ input[type="text"]::placeholder {
 	height: 70px;
 	background-color: #a8c48c;
 	color: #ffffff;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 425px 32px;
 } 
+
+.recipe .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 435px 32px;
+}
 
 footer .container {
 	margin-top: 200px;
@@ -1072,6 +1197,16 @@ footer .container {
 	height: 60px;
 	background-color: #a8c48c;
 	color: #ffffff;
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 260px 29px;
+}
+
+.guarantee .note .btn:hover {
+	background: rgba(168, 196, 140, 0.7);
+	background-image: url(../img/arrow-for-button.png);
+	background-repeat: no-repeat;
+	background-position: 275px 29px;
 }
 
 .footer-bottom {
@@ -1089,7 +1224,9 @@ footer .container {
 
 .footer-menu li {
 	float: left;
-	margin-right: 50px;
+	margin-right: 15px;
+	padding-top: 5px;
+	width: 205px;
 	list-style: none;
 }
 
@@ -1097,17 +1234,43 @@ footer .container {
 	margin-right: 55px;
 }
 
+.footer-menu li:last-child {
+	margin-right: 0;
+}
+
 .footer-menu a {
 	font-size: 12px;
 	color: #9a9a9a;
 }
 
+.footer-menu a:hover {
+	color: rgba(154, 154, 154, 0.7);
+	text-decoration: none;
+}
+
+.footer-menu a:active {
+	text-decoration: underline;
+}
+
 .footer-bottom .phone {
+	position: relative;
 	float: right;
 	margin-right: 275px;
 	width: 200px;
 	font-size: 20px;
+	line-height: 20px;
 	font-weight: bold;
+	text-align: right;
+}
+
+.footer-bottom .phone-image {
+	position: absolute;
+	display: inline-block;
+	top: 2px;
+	left: 5px;
+	width: 16px;
+	height: 16px;
+	background: url(../img/phone.png) no-repeat;
 }
 
 .footer-bottom .call {

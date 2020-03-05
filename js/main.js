@@ -1,16 +1,22 @@
 jQuery(document).ready(function($) {
 
+	// Код для каверов в блоке .ingridients
 
-	// Код для каверов в блоке .ingridients (сырой)
+	var ingredients = $('.ingredients-list li');
 
-	// var base = $('.ingredient-item');
-	// var cover = $('.ingredient-item .cover');
+	$.each(ingredients, function(index) {
+		$('.ingredients-list li:nth-child('+ index +')').hover(function() {
+			$('.ingredients-list li:nth-child('+ index +') .cover').addClass('active');
+		}, function() {
+			$('.ingredients-list li:nth-child('+ index +') .cover').removeClass('active');
+		});
+	});
 
-	// base.hover(function() {
-	// 	$(cover).addClass('active');
-	// }, function() {
-	// 	$(cover).removeClass('active');
-	// });
+	$('.ingredients-list li:last-child').hover(function() {
+		$('.ingredients-list li:last-child .cover').addClass('active');
+	}, function() {
+		 $('.ingredients-list li:last-child .cover').removeClass('active');
+	});
 
 	// Код для табов в блоке .reviews
 
@@ -26,4 +32,3 @@ jQuery(document).ready(function($) {
 		$(target).toggleClass('active');
 	});
 });
-
